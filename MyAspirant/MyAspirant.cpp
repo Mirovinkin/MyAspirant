@@ -61,10 +61,17 @@ public:
         _averageGPA = AverageGPA;
     }
 
-    bool HasAccess() {
-        if (_averageGPA < 4) return false;
-        return 1;
+     string HasAccess() {
+        if (_averageGPA < 4 || _averageGPA == NAN) return "Не допущен";
+        return "Допущен";
     }
+
+    void PrintInfo() {
+        cout << "Имя - " << _name << endl << "Фамилия - " << _surName << endl
+            << "Айди - " << _id << endl << "Средний GPA - " << _averageGPA << endl <<
+            "Тема дипломной - " << _diplomaTopic << endl << "Допуск к защите - " << HasAccess();
+    }
+
 
     
 };
